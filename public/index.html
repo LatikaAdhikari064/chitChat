@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Community Chat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Login Section -->
+  <div id="login-container">
+    <h2>Welcome to Community Chat</h2>
+    <input type="text" id="username-input" placeholder="Enter your name" />
+    <input type="file" id="photo-input" accept="image/*" />
+    <input type="text" id="room-input" placeholder="Enter room name" />
+    <button id="create-room-btn">Create Room</button>
+    <button id="join-room-btn">Join Room</button>
+  </div>
+
+  <!-- Chat Section -->
+  <div id="chat-container" style="display: none;">
+    <h2>Room: <span id="room-name"></span></h2>
+    <div id="messages"></div>
+    <div id="typing-status" style="font-style: italic; color: gray;"></div>
+    <form id="chat-form">
+      <input type="text" id="message-input" placeholder="Type a message..." autocomplete="off" />
+      <button type="submit">Send</button>
+      <button id="delete-chats-btn" type="button">Delete All Chats</button>
+
+    </form>
+  </div>
+  <!--
+Foil Stamping Effect
+https://codepen.io/wakana-k/pen/BavmMoO
+Copyright (c) 2023 by Wakana Y.K.
+-->
+<div id="background">
+  <div><span></span></div>
+  <div><span></span></div>
+  <div><span></span></div>
+  <div><span></span></div>
+  <div><span></span></div>
+  <div><span></span></div>
+  <div><span></span></div>
+  <div><span></span></div>
+  <div><span></span></div>
+  <div><span></span></div>
+  <div><span></span></div>
+  <div><span></span></div>
+  <div><span></span></div>
+  <div><span></span></div>
+  <div><span></span></div>
+  <div><span></span></div>
+  <div><span></span></div>
+  <div><span></span></div>
+  <div><span></span></div>
+  <div><span></span></div>
+  <div><span></span></div>
+  <div><span></span></div>
+  <div><span></span></div>
+</div>
+
+  <!-- Scripts -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
