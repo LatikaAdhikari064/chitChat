@@ -107,14 +107,6 @@ io.on('connection', (socket) => {
     socket.to(data.room).emit('typing', data);
   });
 
-  // Handle clear messages event
-  socket.on('clearMessages', () => {
-    // You can clear messages in the database if needed or emit a signal to clear messages on clients
-    Message.deleteMany({}).then(() => {
-      io.emit('clearMessages');  // Notify all clients to clear messages
-    });
-  });
-
   // Disconnect cleanup
   socket.on('disconnect', () => {
     console.log('User disconnected:', socket.username);
@@ -143,6 +135,11 @@ app.post('/signup', async (req, res) => {
 
   res.status(201).json({ message: 'User registered successfully' });
 });
+/*deletion */
+socket.on('clearMessages', () => {
+  io.emit('clearMessages');
+});
+
 
 // Server listen
 server.listen(3110, () => {
